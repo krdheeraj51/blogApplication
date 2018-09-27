@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<!-- <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
@@ -16,5 +16,56 @@
   <li>
     <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
   </li>
-</ul>
+</ul> -->
 
+<div style="text-align: center">
+  <div class="container">
+    <div class="row header">
+      <div class="col-m-12">
+        <a style="color:white">Synapse Tech Blog</a>
+      </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- <a class="navbar-brand" href="#">Toggle Navigation</a> -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class=" nav navbar-nav">
+            <!-- <li>
+              <a>Home </a>
+            </li>
+            <li >
+                <a>About</a>
+              </li>
+            <li >
+              <a>Post a blog</a>
+            </li> -->
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['/home']">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/about']">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/create']">Post a blog</a>
+              </li>
+            
+          </ul>
+        </div>
+      </nav>
+
+
+
+</div>
+
+</div>
+
+
+
+  
+
+
+
+
+<router-outlet></router-outlet>
