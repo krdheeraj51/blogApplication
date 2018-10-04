@@ -26,7 +26,7 @@ import { BlogViewComponent } from './blog-view/blog-view.component';
       {path: 'home', component: HomeComponent},
       {path: 'create', component: CreateComponent},
       {path: 'about' , component : AboutComponent },
-      {path: 'blog/:blogView' , component: BlogViewComponent}
+      {path: 'blog/:blogId' , component: BlogViewComponent}
     ])
 
   ],

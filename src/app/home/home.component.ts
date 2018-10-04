@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { BlogService } from '../blog.service';
 
 
 @Component({
@@ -6,50 +7,20 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
-  public allBlogs = [
-    {
-      "blogId":"1",
-      "lastModified":"2016-10-31T00:00:00.000Z",
-      "created":"2016-10-31T00:00:00.000Z",
-      "tags":[],
-      "author":"Admin",
-      "category":"comedy", 
-      "isPublished":true,
-      "views":0,
-      "bodyHtml":"this is blog body",
-      "description":"this is blog 1 Application",
-      "title":"this blog 1"
-    },{
-      "blogId":"2",
-      "lastModified":"2016-10-31T00:00:00.000Z",
-      "created":"2016-10-31T00:00:00.000Z",
-      "tags":[],
-      "author":"Admin",
-      "category":"comedy",
-      "isPublished":true,
-      "views":0,
-      "bodyHtml":"this is blog body",
-      "description":"this is blog 2 Application",
-      "title":"this blog 2"
-    },{
-        "blogId":"3",
-        "lastModified":"2016-10-31T00:00:00.000Z",
-        "created":"2016-10-31T00:00:00.000Z",
-        "tags":[],
-        "author":"Admin",
-        "category":"comedy",
-        "isPublished":true,
-        "views":0,
-        "bodyHtml":"this is blog body",
-        "description":"this is blog 3 Application",
-        "title":"this blog 3"
-      }
-  ];
-
-  constructor() { }
+export class HomeComponent implements OnInit, OnDestroy {
+ public allBlogs;
+  constructor(public blogservice: BlogService) {
+    console.log('BlogService is called ...');
+    console.log("Home Component Constructor is called ..");
+   }
 
   ngOnInit() {
+    console.log("Home Component ngOnInit is called ..");
+    this.allBlogs = this.blogservice.getAllBlogs();
+    console.log(this.allBlogs);
+  }
+  ngOnDestroy() {
+    console.log("Home Component ngOnDestory is called ..");
   }
 
 }
